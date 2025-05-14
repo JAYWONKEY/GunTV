@@ -30,7 +30,7 @@
     - bumb: 57장
     - rifle: 186장 → 이후 800장 추가 촬영
 
-### 3. `data.yaml` 설정 예시
+### 3. `data.yaml` 설정 
 
 ```yaml
 path: D:\Projects\YoloGunPro\dataset
@@ -44,6 +44,8 @@ names: ['bomb', 'bumb', 'rifle']
 YOLOv8n
 
 YOLOv11n, 11s, 11m 등 다양한 경량/중간 모델
+
+```
 
 ```
 from ultralytics import YOLO
