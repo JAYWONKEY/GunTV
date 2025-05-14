@@ -79,7 +79,7 @@ if __name__ == '__main__':
     main()
 ```
 
-📊 훈련 결과 및 분석
+### 📊 훈련 결과 및 분석
 성능 평가
 F1-score 최고점: 0.85 (conf=0.591)
 
@@ -92,21 +92,20 @@ F1 / Precision / Recall / PR 커브 확인
 
 클래스별 mAP 및 confusion matrix 필요
 
-문제점 & 해결
+### 문제점 & 해결
 문제	해결
 bomb 과적합	rifle 이미지 다량 추가
 클래스 1개만 감지	클래스 균형 조정
 감지 시 이미지 표시 안됨	UI 코드 수정으로 해결
 모델 성능 불안정	다양한 모델/에폭 실험 및 증강 기법 적용
 
-🎮 UI 개발
+### 🎮 UI 개발
 목표
 메이플스토리 스타일 보스 전투 인터페이스 구현
 
-카메라에서 객체 감지 시 공격 애니메이션 표시
 
 UI 트러블슈팅
-이미지 안나오는 문제 → conf > 0.4 조건 아래에서만 이미지 표시되도록 코드 수정
+카메라에서 객체 감지 시 공격 애니메이션 표시이미지 안나오는 문제 → conf > 0.4 조건 아래에서만 이미지 표시되도록 코드 수정 -> 해당 문제 남아있음
 ```
 if conf > 0.4:
     if class_name == "bomb":
@@ -123,29 +122,29 @@ if conf > 0.4:
         cv2.putText(cam_frame, f"{class_name} {conf:.2f}", (x1, y1 - 10),
                     cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
 ```
-🧠 향후 계획
+### 📷 시연 이미지 (일부)
+원본 데이터 라벨링 후 메이플 UI 결과 감지 화면
+<img width="989" alt="image" src="https://github.com/user-attachments/assets/0e6846cd-281d-47f8-99a7-ddff6314e7e9" />
+
+### 🧠 향후 계획
 클래스별 mAP, confusion matrix 정밀 분석
 
-실시간 UI 안정성 개선 (카메라 고정 등)
+실시간 UI 안정성 개선 (카메라 고정 및 공격 이미지 패턴 개선)
 
 다양한 실생활 객체(패트병, 장난감 총 등) 추가 라벨링
 
 YOLOv8/11 최종 모델 비교 후 선택
 
+증강기법 및 다양한 YOLO 기법 사용 
 
-👥 팀원
+
+### 👥 팀원
 4조 YOLO조
 설태수 팀장님
 홍대길 팀원
 박지원 팀원
 
-📷 시연 이미지 (일부)
-원본 데이터 라벨링	결과 감지 화면
-
-📌 비고
-로컬 실행 경로: D:\Projects\YoloGunPro\
-
-모델: YOLOv11n.pt, YOLOv8n.pt 등 혼합 사용
+### 모델: YOLOv11n.pt, YOLOv8n.pt 등 혼합 사용
 
 개발 환경: Python 3.9, Ultralytics YOLO, OpenCV, Roboflow
 
