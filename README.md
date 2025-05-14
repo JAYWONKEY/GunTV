@@ -80,17 +80,14 @@ if __name__ == '__main__':
 ```
 
 ### 📊 훈련 결과 및 분석
-성능 평가
-F1-score 최고점: 0.85 (conf=0.591)
+![image](https://github.com/user-attachments/assets/5a2e97c2-801b-4cb9-a86f-84174f09e13c)
 
-mAP@0.5: 0.938
-
-클래스 불균형 문제: bomb 클래스 과적합
-
-주요 그래프
-F1 / Precision / Recall / PR 커브 확인
-
-클래스별 mAP 및 confusion matrix 필요
+### 🔍 주요 결과 요약
+- F1-score 최고점: `0.85` (conf threshold: `0.591`)
+- mAP@0.5: `0.938` 👉 꽤 높은 정확도
+- mAP@0.5:0.95: `0.69` 👉 정밀한 영역까지도 잘 학습됨
+- Precision / Recall 안정적: Epoch 30 이후부터 plateau 형성
+- 클래스 불균형 문제: `bomb` 클래스 비중 높아 과적합 경향
 
 ### 문제점 & 해결
 문제	해결
@@ -102,7 +99,6 @@ bomb 과적합	rifle 이미지 다량 추가
 ### 🎮 UI 개발
 목표
 메이플스토리 스타일 보스 전투 인터페이스 구현
-
 
 UI 트러블슈팅
 카메라에서 객체 감지 시 공격 애니메이션 표시이미지 안나오는 문제 → conf > 0.4 조건 아래에서만 이미지 표시되도록 코드 수정 -> 해당 문제 남아있음
